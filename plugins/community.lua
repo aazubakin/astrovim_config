@@ -1,30 +1,34 @@
 return {
   "AstroNvim/astrocommunity",
-  { import = "astrocommunity.colorscheme.gruvbox" },
+  { import = "astrocommunity.colorscheme.gruvbox-nvim" },
   { -- further customize the options set by the community
     "gruvbox.nvim",
+    config = function()
+      vim.o.background = "light"
+      vim.g.gruvbox_flat_style = "hard"
+    end,
+  },
+  { import = "astrocommunity.colorscheme.catppuccin" },
+  { -- further customize the options set by the community
+    "catppuccin",
     opts = {
-      undercurl = true,
-      underline = true,
-      bold = true,
-      italic = {
-        strings = false,
-        comments = true,
-        operators = false,
-        folds = true,
+      integrations = {
+        sandwich = false,
+        noice = true,
+        mini = true,
+        leap = true,
+        markdown = true,
+        neotest = true,
+        cmp = true,
+        overseer = true,
+        lsp_trouble = true,
+        ts_rainbow2 = true,
       },
-      strikethrough = true,
-      invert_selection = false,
-      invert_signs = false,
-      invert_tabline = false,
-      invert_intend_guides = false,
-      inverse = true, -- invert background for search, diffs, statuslines and errors
-      contrast = "hard", -- can be "hard", "soft" or empty string
-      palette_overrides = {},
-      overrides = {},
-      dim_inactive = false,
-      transparent_mode = false,
-    }
+    },
+  },
+  { import = "astrocommunity.colorscheme.sonokai" },
+  { -- further customize the options set by the community
+    "sonokai",
   },
   { import = "astrocommunity.completion.copilot-lua" },
   { -- further customize the options set by the community
