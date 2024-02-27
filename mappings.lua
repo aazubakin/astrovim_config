@@ -8,6 +8,18 @@ return {
   n = {
     -- second key is the lefthand side of the map
     -- mappings seen under group name "Buffer"
+    ["<C-t>"] = {
+        "<cmd>ToggleTerm<CR>",
+        desc = "Toggle Terminal",
+      },
+    ["<leader>1"] = {
+        "<cmd>ToggleTerm 1 direction=vertical size=40<CR>",
+        desc = "Open first Terminal",
+      },
+    ["<leader>2"] = {
+        "<cmd>ToggleTerm 2 direction=vertical<CR>",
+        desc = "Open second Terminal",
+      },
     ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
     ["<leader>bD"] = {
       function()
@@ -20,9 +32,27 @@ return {
     ["<leader>b"] = { name = "Buffers" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+    ["<leader>y"] = { [["+y]] },
+    ["<leader>Y"] = { [["+Y]] }
   },
   t = {
+    ["<C-t>"] = {
+        "<cmd>ToggleTerm<CR>",
+        desc = "Toggle Terminal",
+      },
+    ["<Esc>"] = {
+        "<C-\\><C-n>",
+        desc = "Terminal Normal Vim Mode",
+      },
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
   },
+  v = {
+    ["J"] = {":m '>+1<CR>gv=gv"},
+    ["K"] = {":m '<-2<CR>gv=gv"},
+    ["<leader>y"] = { [["+y]] }
+  },
+  x = {
+    ["<leader>p"] = { [["_dP"]] }
+  }
 }

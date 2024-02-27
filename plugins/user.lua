@@ -9,4 +9,10 @@ return {
   --     require("lsp_signature").setup()
   --   end,
   -- },
+  {
+    'wavded/vim-stylus',
+    config = function()
+      -- Configuration for the stylus.vim plugin
+    end
+  },
 }
